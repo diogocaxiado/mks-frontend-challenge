@@ -1,0 +1,16 @@
+.main {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1.8rem;
+
+   padding: 2rem 0;
+
+   .checkout {
+      position: absolute;
+      top: 0;
+      right: 0;
+   }
+}

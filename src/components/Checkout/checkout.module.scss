@@ -1,0 +1,86 @@
+.checkout {
+   width: 34rem;
+   min-height: 100vh;
+   position: relative;
+   
+   background-color: #0F52BA;
+
+   .title {
+      width: 60%;
+      font-size: 2.7rem;
+      font-weight: 700;
+      line-height: 3.3rem;
+      padding: 2.5rem 0 0 3.2rem;
+
+      color: #FFFFFF;
+   }
+
+   .close {
+      position: absolute;
+      top: 2.6rem;
+      right: 1.5rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 4.6rem;
+      height: 4.6rem;
+
+      border-radius: 50%;
+      background-color: #000000;
+
+      span {
+         font-size: 3rem;
+         font-weight: 400;
+         line-height: 1.5rem;
+
+         color: #0F52BA;
+      }
+   }
+
+   .items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+
+      margin: 5.5rem 0;
+   }
+
+   .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 10rem;
+
+      padding: 0 3rem;
+
+      .text, .price {
+         font-size: 2.8rem;
+         font-weight: 700;
+         line-height: 1.5rem;
+
+         color: #FFFFFF;
+      }
+   }
+
+   .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 7rem;
+
+      background-color: #000000;
+
+      span {
+         font-size: 2rem;
+         font-weight: 700;
+         line-height: 1.5rem;
+
+         color: #FFFFFF;
+      }
+   }
+}
