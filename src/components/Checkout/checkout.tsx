@@ -31,8 +31,6 @@ export function Checkout({onClose}: ICheckout) {
 
          <div className={styles.items}>
             {itemsInCart.map((item) => {
-               console.log(item);
-               
                return <Item key={item.id} product={item} />
             })}
          </div>

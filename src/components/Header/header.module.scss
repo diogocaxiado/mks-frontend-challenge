@@ -54,3 +54,63 @@
       }
    }
 }
+
+@media(min-width: 769px) {
+   .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   
+      height: 10.1rem;
+      padding: 0 6.5rem;
+      background-color: #0F52BA;
+   
+      .title {
+         display: flex;
+         align-items: flex-end;
+         gap: 1rem;
+   
+         h1 {
+            font-size: 4.0rem;
+            font-weight: 600;
+            line-height: 1.9rem;
+   
+            color: #FFFFFF;
+         }
+   
+         span {
+            font-size: 2.0rem;
+            font-weight: 200;
+            line-height: 1.9rem;
+            
+            color: #FFFFFF;
+         }
+      }
+   
+      .button {
+         display: flex;
+         justify-content: start;
+         align-items: center;
+         gap: 1.5rem;
+         cursor: pointer;
+   
+         width: 9.0rem;
+         height: 4.5rem;
+         padding-left: 1.5rem;
+         border-radius: 8px;
+   
+         background-color: #FFFFFF;
+   
+         .cart {
+            width: 1.9rem;
+            height: fit-content;
+         }
+   
+         .amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.4rem;
+         }
+      }
+   }
+}

@@ -48,12 +48,15 @@ export function Item({product}: Iitem) {
          <span className={styles.name}>{product.name}</span>
 
          <div className={styles.base}>
-            <div className={styles.count}>
-               <span className={styles.decrement} onClick={() => removeAmount()}>-</span>
-               <div className={styles.line} />
-               <span className={styles.amount}>{product.amount}</span>
-               <div className={styles.line} />
-               <span className={styles.increment} onClick={() => addAmount()}>+</span>
+            <div className={styles.divCount}>
+               <span className={styles.nameCount}>Qtd:</span>
+               <div className={styles.count}>
+                  <span className={styles.decrement} onClick={() => removeAmount()}>-</span>
+                  <div className={styles.line} />
+                  <span className={styles.amount}>{product.amount}</span>
+                  <div className={styles.line} />
+                  <span className={styles.increment} onClick={() => addAmount()}>+</span>
+               </div>
             </div>
 
             <div className={styles.price}>

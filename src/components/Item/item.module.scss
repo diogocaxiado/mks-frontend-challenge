@@ -16,6 +16,7 @@
       position: absolute;
       right: 1.4rem;
       top: 0.9rem;
+      cursor: pointer;
 
       span {
          font-size: 3.2rem;
@@ -47,6 +48,10 @@
 
       width: 84%;
 
+      .nameCount {
+         display: none;
+      }
+
       .count {
          display: flex;
          justify-content: space-between;
@@ -60,6 +65,7 @@
          border-radius: 8px;
 
          .decrement, .increment {
+            cursor: pointer;
             font-size: 2.4rem;
             font-weight: 400;
             line-height: 3.0rem;
@@ -94,6 +100,142 @@
             font-weight: 700;
             line-height: 1.5rem;
             color: #FFFFFF;
+         }
+      }
+   }
+}
+
+@media(min-width: 769px) {
+   .card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      
+      width: 80%;
+      height: 9.5rem;
+      padding: 1.9rem 2.1rem;
+      
+      border-radius: 8px;
+      box-shadow: 0px 2px 8px 0px #00000022;
+      background-color: #FFFFFF;
+   
+      .close {
+         position: absolute;
+         right: -0.5rem;
+         top: -0.5rem;
+         cursor: pointer;
+
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         
+         width: 1.8rem;
+         height: 1.8rem;
+
+         border-radius: 50%;
+         background-color: #000000;
+   
+         span {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.7rem;
+            
+            color: #FFFFFF;
+         }
+      }
+      
+      .product {
+         width: fit-content;
+         height: 6rem;
+         min-height: 6rem;
+         object-fit: cover;
+      }
+   
+      .name {
+         width: 60%;
+         padding: 0;
+   
+         font-size: 1.3rem;
+         font-weight: 400;
+         line-height: 1.9rem;
+      }
+   
+      .base {
+         display: flex;
+         justify-content: space-between;
+         gap: 3rem;
+   
+         width: auto;
+
+         .divCount {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 40%;
+
+            .nameCount {
+               display: block;
+
+               font-size: 1rem;
+               font-weight: 400;
+               line-height: 6.1px;
+            }
+      
+            .count {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+               height: 1.9rem;
+               padding: 0 0.4rem;
+      
+               border: 0.3px solid #BFBFBF;
+               border-radius: 8px;
+      
+               .decrement, .increment {
+                  font-size: 1.4rem;
+                  font-weight: 400;
+                  line-height: 3.0rem;
+               }
+      
+               .line {
+                  width: 0.2px;
+                  height: 80%;
+                  background-color: #BFBFBF;
+               }
+      
+               .amount {
+                  font-size: 1rem;
+                  font-weight: 400;
+                  line-height: 2.4rem;
+               }
+            }
+         }
+   
+         .price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+   
+            width: 8.4rem;
+            height: 3.4rem;
+            border-radius: 5px;
+   
+            background-color: transparent;
+   
+            strong {
+               font-size: 1.5rem;
+               font-weight: 700;
+               line-height: 1.5rem;
+               color: #000000;
+            }
          }
       }
    }

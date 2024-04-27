@@ -1,11 +1,10 @@
 .checkout {
+   display: flex;
+   flex-direction: column;
+
    width: 34rem;
-   min-height: 100vh;
-   
-   background-color: #0F52BA;
 
    .title {
-      width: 60%;
       font-size: 2.7rem;
       font-weight: 700;
       line-height: 3.3rem;
@@ -49,12 +48,7 @@
    }
 
    .bottom {
-      position: absolute;
-      bottom: 0;
-
       width: 100%;
-      margin-top: auto;
-      padding-top: auto;
 
       .info {
          display: flex;
@@ -77,12 +71,13 @@
          display: flex;
          justify-content: center;
          align-items: center;
+         cursor: pointer;
    
          width: 100%;
          height: 7rem;
    
          background-color: #000000;
-   
+
          span {
             font-size: 2rem;
             font-weight: 700;
@@ -94,16 +89,103 @@
    }
 }
 
-@media(max-height: 760px) {
+@media(min-width: 769px) {
    .checkout {
-      min-height: auto;
-
-      .bottom {
-         position: static;
+      display: flex;
+      flex-direction: column;
    
+      width: 48.6rem;
+   
+      .title {
+         font-size: 2.7rem;
+         font-weight: 700;
+         line-height: 3.3rem;
+         padding: 2.5rem 0 0 4.7rem;
+   
+         color: #FFFFFF;
+      }
+   
+      .close {
+         position: absolute;
+         top: 2.6rem;
+         right: 1.5rem;
+         cursor: pointer;
+   
+         display: flex;
+         justify-content: center;
+         align-items: center;
+   
+         width: 3.8rem;
+         height: 3.8rem;
+   
+         border-radius: 50%;
+         background-color: #000000;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+
+         span {
+            font-size: 2.2rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+   
+            color: #FFFFFF;
+         }
+      }
+   
+      .items {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 1.6rem;
+   
+         padding: 5.5rem 0;
+      }
+   
+      .bottom {
          width: 100%;
-         margin-top: auto;
-         padding-top: auto;
+   
+         .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            height: 10rem;
+            padding: 0 4.7rem;
+      
+            .text, .price {
+               font-size: 2.8rem;
+               font-weight: 700;
+               line-height: 1.5rem;
+      
+               color: #FFFFFF;
+            }
+         }
+      
+         .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      
+            width: 100%;
+            height: 8rem;
+      
+            background-color: #000000;
+      
+            &:hover {
+               opacity: 0.9;
+            }
+
+            span {
+               font-size: 2.8rem;
+               font-weight: 700;
+               line-height: 1.5rem;
+      
+               color: #FFFFFF;
+            }
+         }
       }
    }
 }

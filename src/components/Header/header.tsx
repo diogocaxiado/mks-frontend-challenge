@@ -30,7 +30,7 @@ export function Header() {
             <span className={styles.amount}>{itemsInCart.length}</span>
          </div>
 
-         <Drawer open={menu} onClose={() => toggleDrawer(false)} anchor='right'>
+         <Drawer open={menu} onClose={() => toggleDrawer(false)} anchor='right' hideBackdrop>
             <Checkout onClose={() => toggleDrawer(false)} />
          </Drawer>
       </header>
