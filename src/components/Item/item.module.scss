@@ -48,39 +48,42 @@
 
       width: 84%;
 
-      .nameCount {
-         display: none;
-      }
-
-      .count {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-
+      .divCount {
          min-width: 50%;
-         height: 3.4rem;
-         padding: 0 1.2rem;
-
-         border: 0.3px solid #BFBFBF;
-         border-radius: 8px;
-
-         .decrement, .increment {
-            cursor: pointer;
-            font-size: 2.4rem;
-            font-weight: 400;
-            line-height: 3.0rem;
+         
+         .nameCount {
+            display: none;
          }
-
-         .line {
-            width: 0.2px;
-            height: 80%;
-            background-color: #BFBFBF;
-         }
-
-         .amount {
-            font-size: 2rem;
-            font-weight: 400;
-            line-height: 2.4rem;
+   
+         .count {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+   
+            height: 3.4rem;
+            padding: 0 1.2rem;
+   
+            border: 0.3px solid #BFBFBF;
+            border-radius: 8px;
+   
+            .decrement, .increment {
+               cursor: pointer;
+               font-size: 2.4rem;
+               font-weight: 400;
+               line-height: 3.0rem;
+            }
+   
+            .line {
+               width: 0.2px;
+               height: 80%;
+               background-color: #BFBFBF;
+            }
+   
+            .amount {
+               font-size: 2rem;
+               font-weight: 400;
+               line-height: 2.4rem;
+            }
          }
       }
 
