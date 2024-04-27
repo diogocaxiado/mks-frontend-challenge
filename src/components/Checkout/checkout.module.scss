@@ -1,7 +1,6 @@
 .checkout {
    width: 34rem;
    min-height: 100vh;
-   position: relative;
    
    background-color: #0F52BA;
 
@@ -19,6 +18,7 @@
       position: absolute;
       top: 2.6rem;
       right: 1.5rem;
+      cursor: pointer;
 
       display: flex;
       justify-content: center;
@@ -45,42 +45,65 @@
       align-items: center;
       gap: 1.6rem;
 
-      margin: 5.5rem 0;
+      padding: 5.5rem 0;
    }
 
-   .info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 10rem;
-
-      padding: 0 3rem;
-
-      .text, .price {
-         font-size: 2.8rem;
-         font-weight: 700;
-         line-height: 1.5rem;
-
-         color: #FFFFFF;
-      }
-   }
-
-   .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+   .bottom {
+      position: absolute;
+      bottom: 0;
 
       width: 100%;
-      height: 7rem;
+      margin-top: auto;
+      padding-top: auto;
 
-      background-color: #000000;
+      .info {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         
+         height: 10rem;
+         padding: 0 3rem;
+   
+         .text, .price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+   
+            color: #FFFFFF;
+         }
+      }
+   
+      .button {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+   
+         width: 100%;
+         height: 7rem;
+   
+         background-color: #000000;
+   
+         span {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+   
+            color: #FFFFFF;
+         }
+      }
+   }
+}
 
-      span {
-         font-size: 2rem;
-         font-weight: 700;
-         line-height: 1.5rem;
+@media(max-height: 760px) {
+   .checkout {
+      min-height: auto;
 
-         color: #FFFFFF;
+      .bottom {
+         position: static;
+   
+         width: 100%;
+         margin-top: auto;
+         padding-top: auto;
       }
    }
 }

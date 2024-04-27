@@ -1,31 +1,49 @@
+'use client'
+
 import Image from 'next/image';
-import Product from '@/assets/product.svg';
 import Bag from '@/assets/bag.svg';
 
 import styles from './card.module.scss';
+import { ICard } from '@/interface';
+import { useDataContext } from '@/context/product';
 
-interface ICard {
-   name: string;
-   src: string;
-   alt: string;
-}
+export function Card({id, src, name, description, price, amount}: ICard) {
+   const {itemsInCart, setItemsInCart} = useDataContext();
 
-export function Card() {
+   function handleAddToCart() {
+      const product = {
+         id,
+         src,
+         name,
+         description,
+         price,
+         amount
+      }
+
+      const itemAlreadyInCart = itemsInCart.some(item => item.id === product.id);
+
+      if (!itemAlreadyInCart) {
+         setItemsInCart([...itemsInCart, product]);
+      }
+      
+      return product
+   }
+
    return (
-      <section className={styles.card}>
-         <Image className={styles.productImg} src={Product} width={128} height={160} alt='Product image' />
+      <section className={styles.card} key={id}>
+         <Image className={styles.productImg} src={src} width={128} height={160} alt='Product image' />
 
          <div className={styles.productDiv}>
-            <span className={styles.productName}>Apple Watch Series 4 GPS</span>
+            <span className={styles.productName}>{name}</span>
 
             <div className={styles.productPrice}>
-               <strong>R$399</strong>
+               <strong>{price}</strong>
             </div>
          </div>
          
-         <p className={styles.productDescription}>Redesigned from scratch and completely revised.</p>
+         <p className={styles.productDescription}>{description}</p>
 
-         <div className={styles.button}>
+         <div className={styles.button} onClick={() => handleAddToCart()}>
             <Image className={styles.image} src={Bag} width={14} height={16} alt='Shopping bag image' />
             <span className={styles.text}>Comprar</span>
          </div>
