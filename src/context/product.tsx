@@ -1,6 +1,6 @@
 'use client';
 
-import { http } from '@/app/axios';
+import { http } from '@/services/api';
 import { ICard, IProduct } from '@/interface';
 import React, {
    Dispatch,
@@ -8,15 +8,13 @@ import React, {
     SetStateAction,
     createContext,
     useContext,
-    useEffect,
     useState
 } from 'react';
 
 type IProductContextData = {
-   products: IProduct[];
-   setProducts: Dispatch<SetStateAction<IProduct[]>>
    itemsInCart: ICard[];
-   setItemsInCart: Dispatch<SetStateAction<ICard[]>>
+   setItemsInCart: Dispatch<SetStateAction<ICard[]>>;
+   getProducts: () => Promise<void>;
 }
 
 interface AppProviderProps {
@@ -28,18 +26,16 @@ const DataContext = createContext<IProductContextData | undefined>(undefined);
 const DataProvider: React.FC<AppProviderProps> = ({
     children
 }: AppProviderProps) => {
-   const [products, setProducts] = useState<IProduct[]>([]);
-   const [itemsInCart, setItemsInCart] = useState<ICard[]>([]);
-
-   useEffect(() => {
-      async function fetchData() {
+    const [itemsInCart, setItemsInCart] = useState<ICard[]>([]);
+    
+    async function getProducts() {
         const response = await http.get('/products?page=1&rows=8&sortBy=id&orderBy=ASC');
-  
+
         const productApi = response.data.products.map((product: IProduct) => {
-          let price = product.price;
-          price = price.replace(/\.\d+$/, "");
-          
-          return {
+            let price = product.price;
+            price = price.replace(/\.\d+$/, "");
+            
+            return {
             id: product.id,
             name: product.name,
             brand: product.brand,
@@ -47,19 +43,17 @@ const DataProvider: React.FC<AppProviderProps> = ({
             photo: product.photo,
             price: `R$${price}`,
             amount: 1,
-          }
+            }
         })
-        setProducts(productApi)
-      }
-  
-      fetchData();
-    }, [])
+
+        return productApi
+    }
+ 
 
     const contextValue = {
-        products,
-        setProducts,
         itemsInCart,
         setItemsInCart,
+        getProducts,
     };
 
     return (

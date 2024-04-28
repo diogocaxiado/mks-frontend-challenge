@@ -7,8 +7,6 @@ export interface IProduct {
    description: string;
    photo: string;
    price: string;
-   createdAt: Date;
-   updatedAt: Date;
 }
 
 export interface ICard {
